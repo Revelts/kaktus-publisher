@@ -1,0 +1,425 @@
+{
+  "info": {
+    "_postman_id": "408fc8ee-d556-4a24-835c-94c02e50836b",
+    "name": "Kaktus",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "21665622"
+  },
+  "item": [
+    {
+      "name": "View All Threads",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/kaktus/",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "kaktus",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Success Getting All Threads",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/kaktus/",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "kaktus",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "Application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 08 Jul 2022 14:56:55 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "129"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"OK\",\n    \"data\": [\n        {\n            \"title\": \"Hello World\",\n            \"created_at\": \"2022-07-08 21:56:08\"\n        }\n    ],\n    \"code\": 200,\n    \"accessTime\": \"08-07-2022 21:56:55\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Create New Thread",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"thread_title\": \"GoLang vs Python\",\r\n    \"thread_desc\": \"Golang adala bahas pemgrograman\",\r\n    \"created_by\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/kaktus/",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "kaktus",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Success Create New Thread",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"thread_title\": \"Hello World\",\r\n    \"thread_desc\": \"Hello world adalah salah satu kata testing programming\",\r\n    \"created_by\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/kaktus/",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "kaktus",
+                ""
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "Application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 08 Jul 2022 14:56:08 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "198"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"OK\",\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"Hello World\",\n        \"desc\": \"Hello world adalah salah satu kata testing programming\",\n        \"created_at\": \"2022-07-08 21:56:08\"\n    },\n    \"code\": 200,\n    \"accessTime\": \"08-07-2022 21:56:08\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Like Thread",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"thread_id\": 1,\r\n    \"user_id\": 3\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/kaktus/likeThread",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "kaktus",
+            "likeThread"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "User Already Like Thread",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"thread_id\": 1,\r\n    \"user_id\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/kaktus/likeThread",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "kaktus",
+                "likeThread"
+              ]
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "Application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 08 Jul 2022 18:46:54 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "113"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"Internal Server Error\",\n    \"data\": \"already like the thread\",\n    \"code\": 500,\n    \"accessTime\": \"09-07-2022 01:46:54\"\n}"
+        },
+        {
+          "name": "Success Like Thread",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"thread_id\": 1,\r\n    \"user_id\": 3\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/kaktus/likeThread",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "kaktus",
+                "likeThread"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "Application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 08 Jul 2022 18:47:10 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "72"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"OK\",\n    \"data\": 200,\n    \"code\": 200,\n    \"accessTime\": \"09-07-2022 01:47:10\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get Thread Details",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:3000/kaktus/thread/1",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "kaktus",
+            "thread",
+            "1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Success Get Thread Details",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:3000/kaktus/thread/1",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "kaktus",
+                "thread",
+                "1"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "Application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 10 Jul 2022 09:14:31 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "1131"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"OK\",\n    \"data\": {\n        \"title\": \"Hello World\",\n        \"description\": \"Hello world adalah salah satu kata testing programming\",\n        \"comments\": [\n            {\n                \"comment_id\": 1,\n                \"comment_desc\": \"Yoi\",\n                \"created_by\": \"Leynardo\",\n                \"created_at\": \"2022-07-09 02:11:05\",\n                \"replies\": [\n                    {\n                        \"reply_desc\": \"Wah parah sih itu bro, masa sih ya\",\n                        \"created_by\": \"Leynardo\",\n                        \"created_at\": \"2022-07-09 12:07:05\"\n                    },\n                    {\n                        \"reply_desc\": \"Wah parah sih itu bro\",\n                        \"created_by\": \"Leynardo\",\n                        \"created_at\": \"2022-07-09 12:06:21\"\n                    },\n                    {\n                        \"reply_desc\": \"Wah ko gitu sih bro\",\n                        \"created_by\": \"Leynardo\",\n                        \"created_at\": \"2022-07-09 03:16:32\"\n                    }\n                ],\n                \"total_replies\": 3\n            },\n            {\n                \"comment_id\": 3,\n                \"comment_desc\": \"Mantap Bro\",\n                \"created_by\": \"Leynardo\",\n                \"created_at\": \"2022-07-09 02:19:51\",\n                \"replies\": null,\n                \"total_replies\": 0\n            },\n            {\n                \"comment_id\": 6,\n                \"comment_desc\": \"Boong kali lu ah elah\",\n                \"created_by\": \"Leynardo\",\n                \"created_at\": \"2022-07-09 18:51:37\",\n                \"replies\": [\n                    {\n                        \"reply_desc\": \"Gila beneran sih, golang powerful banget\",\n                        \"created_by\": \"Leynardo\",\n                        \"created_at\": \"2022-07-09 18:56:22\"\n                    }\n                ],\n                \"total_replies\": 1\n            }\n        ],\n        \"thread_info\": {\n            \"thread_id\": 1,\n            \"created_by\": \"Leynardo\",\n            \"total_likes\": 3,\n            \"total_comments\": 3,\n            \"created_at\": \"2022-07-08 21:56:08\"\n        }\n    },\n    \"code\": 200,\n    \"accessTime\": \"10-07-2022 16:14:31\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Comment Thread",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"thread_id\": 1,\r\n    \"comment_desc\": \"Boong kali lu ah elah\",\r\n    \"created_by\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/kaktus/commentThread",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "kaktus",
+            "commentThread"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Reply Comment",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"comment_id\": 6,\r\n    \"reply_desc\": \"Gila beneran sih, golang powerful banget\",\r\n    \"created_by\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:3000/kaktus/replyComment",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "kaktus",
+            "replyComment"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Success Reply Comment",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"comment_id\": 1,\r\n    \"reply_desc\": \"Wah parah sih itu bro, masa sih ya\",\r\n    \"created_by\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3000/kaktus/replyComment",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "kaktus",
+                "replyComment"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "Application/json"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 09 Jul 2022 05:07:05 GMT"
+            },
+            {
+              "key": "Content-Length",
+              "value": "194"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"OK\",\n    \"data\": {\n        \"comment_id\": 1,\n        \"reply_desc\": \"Wah parah sih itu bro, masa sih ya\",\n        \"created_by\": \"Leynardo\",\n        \"created_at\": \"2022-07-09 12:07:05\"\n    },\n    \"code\": 200,\n    \"accessTime\": \"09-07-2022 12:07:05\"\n}"
+        }
+      ]
+    }
+  ]
+}
